@@ -1,7 +1,7 @@
 # To launch:
 # python3 -m pip install -U selenium
-# python3 -m pip install (-U) Appium-Python-Client
-# python3 appiumTest.py
+# python3 -m pip install -U Appium-Python-Client
+# python3 safariTest.py
 
 import time
 from appium import webdriver
