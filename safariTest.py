@@ -31,7 +31,7 @@ driver = webdriver.Remote("http://localhost:4723", options=options)
 
 #TEST 1: Navigate to Bing
 driver.get("https://bing.com")
-time.sleep(3)
+time.sleep(4)
 
 #TEST 2: Realize we would rather use Google
 driver.get("https://google.com")
@@ -45,22 +45,22 @@ driver.switch_to.context(webview)
 search_box = driver.find_element("name", "q")
 search_box.send_keys("iPhone alarms ranked\n")
 search_box.submit()
-time.sleep(3)
+time.sleep(2)
 
 #TEST 4: Scroll down a bit
 driver.execute_script("""
 window.scrollBy({
-    top: 800,
+    top: 1500,
     left: 0,
     behavior: 'smooth'
 });
 """)
-time.sleep(5)
+time.sleep(4)
 
 #TEST 5: Scroll back to the top
 driver.execute_script("""
 window.scrollBy({
-    top: -800,
+    top: -1500,
     left: 0,
     behavior: 'smooth'
 });
@@ -80,7 +80,7 @@ search_box = wait.until(
 )
 search_box.send_keys("umbrella", Keys.RETURN)
 driver.execute_script("window.scrollBy(0, 400)")
-time.sleep(3)
+time.sleep(1)
 
 #TEST 8: Get it ASAP - rain is in the forecast all week!
 wait = WebDriverWait(driver, 5)
@@ -88,7 +88,7 @@ button = wait.until(
     EC.element_to_be_clickable((By.XPATH, "//*[contains(text(),'Get It Fast')]"))
 )
 button.click()
-time.sleep(3)
+time.sleep(2)
 
 #TEST 9: Scroll down
 driver.execute_script("""
@@ -121,6 +121,7 @@ time.sleep(2)
 wait = WebDriverWait(driver, 5)
 add_to_cart = driver.find_element(By.ID, "add-to-cart-button")
 add_to_cart.click()
+time.sleep(3)
 
 input("Press Enter to quit...")
 driver.quit()
